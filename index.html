@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Tech Goals</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <h1 data-testid="slackDisplayName">Efemiaya Oghenetega</h1>
+        <img
+          src="./profile.jpeg"
+          alt="Slack Profile Picture"
+          data-testid="slackProfilePicture"
+        />
+      </div>
+    </header>
+    <main>
+      <section id="goals">
+        <h2>My Tech Goals for the Next 2 Years</h2>
+        <div class="goal-card">
+          <input type="checkbox" id="goal1" />
+          <label for="goal1">Full Stack Engineering</label>
+          <div class="goal-content">
+            <p>
+              I aim to specialize in full stack development, mastering both
+              frontend and backend technologies. This includes deepening my
+              knowledge in languages such as JavaScript, Python, and frameworks
+              like React, Angular, Node.js, and Django. I want to be proficient
+              in building robust, scalable, and user-friendly web applications.
+            </p>
+          </div>
+        </div>
+        <div class="goal-card">
+          <input type="checkbox" id="goal2" />
+          <label for="goal2">DevOps Skills</label>
+          <div class="goal-content">
+            <p>
+              In addition to full stack development, I intend to acquire the
+              necessary skills to excel as a DevOps engineer. This involves
+              learning about continuous integration and continuous deployment
+              (CI/CD) pipelines, containerization technologies like Docker and
+              Kubernetes, and cloud platforms such as AWS, Azure, and Google
+              Cloud. My goal is to ensure smooth and efficient software delivery
+              processes.
+            </p>
+          </div>
+        </div>
+        <div class="goal-card">
+          <input type="checkbox" id="goal3" />
+          <label for="goal3">Professional Growth</label>
+          <div class="goal-content">
+            <p>
+              I am committed to growing in both skills and responsibility as a
+              software engineer. This includes staying updated with the latest
+              industry trends, participating in professional development
+              opportunities, and seeking mentorship from experienced colleagues.
+              I strive to be recognized as a reliable and competent engineer who
+              can be trusted with complex projects.
+            </p>
+          </div>
+        </div>
+        <div class="goal-card">
+          <input type="checkbox" id="goal4" />
+          <label for="goal4">Long-term Success</label>
+          <div class="goal-content">
+            <p>
+              I am focused on creating a strong foundation for my long-term
+              career. Over the next two years, I want to build a reputation for
+              excellence and reliability, paving the way for future
+              opportunities and advancements. My vision includes contributing to
+              significant projects, mentoring junior developers, and potentially
+              stepping into leadership roles.
+            </p>
+          </div>
+        </div>
+        <div class="goal-card">
+          <input type="checkbox" id="goal5" />
+          <label for="goal5">Continuous Learning</label>
+          <div class="goal-content">
+            <p>
+              Technology is constantly evolving, and I am dedicated to
+              continuous learning. I plan to pursue relevant certifications,
+              attend workshops and conferences, and engage with the tech
+              community through blogs, forums, and networking events.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="dateAndTime">
+        <p data-testid="currentTimeUTC" class="digital-clock">
+          Current Time: <span id="utc-time"></span>
+        </p>
+        <p data-testid="currentDay" class="digital-clock">
+          Current Day: <span id="day-of-week"></span>
+        </p>
+      </div>
+
+      <p data-testid="slackEmail">efemiayafavour@gmail.com</p>
+      <nav>
+        <ul>
+          <li>
+            <a href="https://hng.tech/learn" data-testid="hngLink">HNG Learn</a>
+          </li>
+          <li>
+            <a href="https://keyword.dog" data-testid="keywordLink"
+              >Keyword Dog</a
+            >
+          </li>
+          <li>
+            <a href="https://scrapeanyweb.site" data-testid="scrapeanywebLink"
+              >Scrape Any Web</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </footer>
+
+    <script>
+      function updateTime() {
+        const now = new Date();
+        const utcTime =
+          now.toISOString().replace("T", " ").slice(0, 19) + " UTC";
+        const dayOfWeek = now.toLocaleDateString("en-US", { weekday: "long" });
+
+        document.getElementById("utc-time").textContent = utcTime;
+        document.getElementById("day-of-week").textContent = dayOfWeek;
+      }
+
+      setInterval(updateTime, 1000);
+      updateTime();
+    </script>
+  </body>
+</html>
